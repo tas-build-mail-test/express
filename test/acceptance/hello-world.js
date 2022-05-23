@@ -14,9 +14,8 @@ describe('hello-world', function () {
 
   describe('flaky-test', function () {
     it('sample-test', function () {
-      // var x = Math.random()
-      var x = 0
-      assert.equal(x, 0, "flaky test failed failed, expected: x=0");
+      var x = Math.round((Math.random() + 100))%2
+      assert.equal(x, 1, "flaky test failed failed, expected: x=1");
     })
   })
 
