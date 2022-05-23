@@ -1,6 +1,7 @@
 
 var app = require('../../examples/hello-world')
 var request = require('supertest')
+var assert = require('assert');
 
 describe('hello-world', function () {
   describe('GET /', function () {
@@ -11,9 +12,10 @@ describe('hello-world', function () {
     })
   })
 
-  describe('test', function () {
+  describe('flaky-test', function () {
     it('sample-test', function () {
-      assert.equal([1, 2, 3].indexOf(3), 3);
+      var x = Math.random()
+      assert.equal(x, 1, "assertion failed, expected: x=1");
     })
   })
 
