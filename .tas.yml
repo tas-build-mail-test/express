@@ -5,10 +5,10 @@ preRun:
     - npm install  
 preMerge:
   pattern:
-    - "./test/acceptance/*.js"
+    - "./test/acceptance/cookies.js"
 postMerge:
   pattern: 
-    - "./test/acceptance/*.js"
+    - "./test/acceptance/cookies.js"
 postRun:
   command:
     - node --version
