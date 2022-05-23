@@ -78,6 +78,30 @@ describe('hello-world', function () {
       expect(ans).toBe(false)
     })
   })
+  describe('flaky-test-5', function () {
+    it('current time hour is an aven number', function () {
+      var today = new Date();
+      today = today.getHours();
+      assert.equal(today%2, 0, "flaky test failed failed");
+    })
+    it('current date is an odd number', function () {
+      var today = new Date();
+      today = today.getDate();
+      assert.equal(today%2, 1, "flaky test failed failed");
+    })
+    it('current month is an odd number', function () {
+      var today = new Date();
+      today = today.getMonth();
+      assert.equal(today%2, 1, "flaky test failed failed");
+    })
+  })
+  describe('flaky-test-6', function () {
+    it('milliseconds value of time is odd', function () {
+      var today = new Date();
+      today = today.getMilliseconds();
+      assert.equal(today%2, 0, "flaky test failed failed");
+    })
+  })
   describe('GET /missing', function () {
     it('should respond with 404', function (done) {
       request(app)
