@@ -9,7 +9,4 @@ preMerge:
 postMerge:
   pattern: 
     - "./test/acceptance/*.js"
-postRun:
-  command:
-    - node --version
 configFile: mocharc.yml
