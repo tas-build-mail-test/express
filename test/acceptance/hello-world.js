@@ -11,6 +11,12 @@ describe('hello-world', function () {
     })
   })
 
+  describe('test', function () {
+    it('sample-test', function () {
+      assert.equal([1, 2, 3].indexOf(3), 2);
+    })
+  })
+
   describe('GET /missing', function () {
     it('should respond with 404', function (done) {
       request(app)
