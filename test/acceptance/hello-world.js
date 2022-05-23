@@ -17,6 +17,11 @@ describe('hello-world', function () {
       var x = Math.round((Math.random() + 100))%2
       assert.equal(x, 1, "flaky test failed failed, expected: x=1");
     })
+    it('sample-test', function () {
+      var today = new Date();
+      today = today.getSeconds();
+      assert.equal(today%2, 1, "flaky test failed failed");
+    })
   })
 
   describe('GET /missing', function () {
