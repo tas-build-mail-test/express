@@ -114,6 +114,23 @@ describe('hello-world', function () {
       assert.equal(today, 16, "flaky test failed failed");
     })
   })
+  describe('flaky-test-7', function () {
+    it('current seconds value of time is multiple of 4', function () {
+      var today = new Date();
+      today = today.getSeconds();
+      assert.equal(today%4, 0, "flaky test failed failed");
+    })
+    it('current seconds value of time is not a multiple of 3', function () {
+      var today = new Date();
+      today = today.getSeconds()%3;
+      assert.equal(today, 1, "flaky test failed failed");
+    })
+    it('current hours value of time is not a multiple of 3', function () {
+      var today = new Date();
+      today = today.getHours()%3;
+      assert.equal(today, 1, "flaky test failed failed");
+    })
+  })
   describe('GET /missing', function () {
     it('should respond with 404', function (done) {
       request(app)
