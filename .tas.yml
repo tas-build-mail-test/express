@@ -11,5 +11,5 @@ postMerge:
     - "./test/acceptance/*.js"
 postRun:
   command:
-    - node --version    
+    - node --version
 configFile: mocharc.yml
