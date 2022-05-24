@@ -4,7 +4,7 @@ const cmp = {
     greater: function (a, b) {
         return a > b;
     },
-    less: function (a, b) {
+    smaller: function (a, b) {
         return a < b;
     }
 }
@@ -25,5 +25,6 @@ const isBetween = (x, a, b) => {
     }
     return false
 }
+
 
 module.exports = {cmp, isMultipleOf, isBetween}
