@@ -19,4 +19,11 @@ const isMultipleOf = {
    }
 }
 
-module.exports = {cmp, isMultipleOf}
+const isBetween = (x, a, b) => {
+    if (x >= a && x <= b) {
+        return true
+    }
+    return false
+}
+
+module.exports = {cmp, isMultipleOf, isBetween}

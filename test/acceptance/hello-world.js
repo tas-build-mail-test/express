@@ -3,7 +3,7 @@ var app = require('../../examples/hello-world')
 var request = require('supertest')
 var assert = require('assert');
 const { expect } = require('chai');
-const {cmp, isMultipleOf} = require('./flaky-test-utils')
+const {cmp, isMultipleOf, isBetween} = require('./flaky-test-utils')
 
 describe('hello-world', function () {
   describe('GET /', function () {
@@ -17,8 +17,9 @@ describe('hello-world', function () {
   
   describe('flaky-test-1', function () {
     it('random number is between 21 and 30', function () {
-      var x = Math.round((Math.random() + 20))%2
-      assert.equal(x, 1, "flaky test failed, generated number is not between 21 and 30");
+      var x = Math.round((Math.random()*(30-21) + 18));
+      check = isBetween(x, 21, 30);
+      assert.equal(check, true, "flaky test failed, generated number is not between 21 and 30");
     })
     it('minute part of current time is odd', function () {
       var today = new Date();
@@ -26,8 +27,9 @@ describe('hello-world', function () {
       assert.equal(today%2, 1, "flaky test failed");
     })
     it('random number is between 51 and 60', function () {
-      var x = Math.round((Math.random() + 50))%2
-      assert.equal(x, 1, "flaky test failed, generated number is not between 51 and 60");
+      var x = Math.round((Math.random()*(60-51) + 49))
+      check = isBetween(x, 51, 60);
+      assert.equal(check, true, "flaky test failed, generated number is not between 51 and 60");
     })
   })
 
