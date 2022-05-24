@@ -21,10 +21,11 @@ describe('hello-world', function () {
       check = isBetween(x, 21, 30);
       assert.equal(check, true, "flaky test failed, generated number is not between 21 and 30");
     })
-    it('minute part of current time is odd', function () {
+    it('seconds part of current time is between 1 and 50', function () {
       var today = new Date();
-      today = today.getMinutes();
-      assert.equal(today%2, 1, "flaky test failed");
+      todaySec = today.getSeconds();
+      check = isBetween(todaySec, 1, 50)
+      assert.equal(check, true, "flaky test failed");
     })
     it('current month is even', function () {
       var today = new Date();
