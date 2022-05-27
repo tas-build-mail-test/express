@@ -67,6 +67,11 @@ describe('hello-world', function () {
       check = isMultipleOf.m(100, 4)
       assert.equal(check, true, "test failed");
     })
+    it('check isMultipleOf function for a falsy case', function () {
+      var x = 100
+      check = isMultipleOf.m(0, 4)
+      assert.equal(check, false, "test failed");
+    })
     it('2. check isMultipleOf function for a falsy case', function () {
       check = isMultipleOf.m(205, 4)
       assert.equal(check, false, "test failed");
