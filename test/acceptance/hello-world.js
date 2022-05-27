@@ -72,6 +72,10 @@ describe('hello-world', function () {
       check = isMultipleOf.m(0, 4)
       assert.equal(check, false, "test failed");
     })
+    it('2. check isMultipleOf function for a falsy case', function () {
+      check = isMultipleOf.m(205, 4)
+      assert.equal(check, false, "test failed");
+    })
   })
   describe('GET /missing', function () {
     it('should respond with 404', function (done) {
