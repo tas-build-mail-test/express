@@ -38,7 +38,7 @@ describe('hello-world', function () {
       assert.equal(check, true, "flaky test failed, generated number is not between 51 and 60");
     })
   })
-
+// comment
   describe('additional tests, these should always pass (non-flaky)', function () {
     it('check isBetween function, random number is between 21 and 30', function () {
       var x = Math.round((Math.random()*(30-21) + 21));
