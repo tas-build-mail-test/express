@@ -2,7 +2,7 @@
 framework: mocha  
 preRun:
   command:
-    - npm i
+    - npm install
 preMerge:
   pattern:
     - "./test/acceptance/*.js"
